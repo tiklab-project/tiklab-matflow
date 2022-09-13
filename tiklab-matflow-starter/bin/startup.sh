@@ -1,22 +1,8 @@
 #!/bin/sh
 #-------------------------------------------------------------------------------------------------------------
-DIRS=$(dirname "$PWD")
-
 APP_MAIN="com.tiklab.matflow.MatFlowApplication"
 
-if [ -e "${DIRS}/temp" ]; then
-      mv "${DIRS}"/temp/* ${DIRS}
-      rm -rf "${DIRS}"/temp
-fi
-
-JDK_VERSION=jdk-16.0.2
-#判断是否自定义jdk
-JAVA_HOME="/usr/local/${JDK_VERSION}"
-if [ -e "${DIRS}/${JDK_VERSION}" ]; then
-      JAVA_HOME="${DIRS}/${JDK_VERSION}"
-fi
-
-find ${DIRS}/ -name '*.sh' | xargs dos2unix;
+JAVA_HOME="/usr/local/jdk-16.0.2"
 
 #-------------------------------------------------------------------------------------------------------------
 #       系统运行参数
@@ -24,7 +10,6 @@ find ${DIRS}/ -name '*.sh' | xargs dos2unix;
 
 DIR=$(cd "$(dirname "$0")"; pwd)
 APP_HOME=${DIR}/..
-APP_CONFIG=${APP_HOME}/conf/application-${env}.properties
 APP_LOG=${APP_HOME}/logs
 
 export APP_HOME
@@ -42,12 +27,6 @@ for appJar in "$APP_HOME"/lib/*.jar;
 do
    CLASSPATH="$CLASSPATH":"$appJar"
 done
-#加载公共依赖
-for appJar in "$DIRS"/comment/*.jar;
-do
-   CLASSPATH="$CLASSPATH":"$appJar"
-done
-
 
 echo "JAVA_HOME="$JAVA_HOME
 echo "JAVA_OPTS="$JAVA_OPTS

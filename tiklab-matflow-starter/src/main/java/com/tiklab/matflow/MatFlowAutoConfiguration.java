@@ -4,12 +4,10 @@ import com.tiklab.beans.starter.annotation.EnableBeans;
 import com.tiklab.dal.starter.annotation.EnableDal;
 import com.tiklab.dsm.starter.annotation.EnableDsm;
 import com.tiklab.eam.starter.EnableEam;
-import com.tiklab.eas.enable.EnableEasInlineUtil;
 import com.tiklab.gateway.starter.EnableGateway;
 import com.tiklab.join.starter.annotation.EnableJoin;
 import com.tiklab.licence.starter.EnableLicenceServer;
 import com.tiklab.message.starter.EnableMessage;
-import com.tiklab.mysql.starter.EnableMysql;
 import com.tiklab.pluginx.starter.EnablePluginServer;
 import com.tiklab.privilege.stater.EnablePrivilegeServer;
 import com.tiklab.rpc.starter.annotation.EnableRpc;
@@ -23,8 +21,6 @@ import org.springframework.context.annotation.Configuration;
 @EnableBeans
 @EnableJoin
 @EnableWeb
-@EnableMysql
-@EnableEasInlineUtil
 @EnableDal
 //rpc
 @EnableRpc
