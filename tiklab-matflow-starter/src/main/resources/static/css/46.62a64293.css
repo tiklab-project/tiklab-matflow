@@ -1,0 +1,1 @@
+.projectSet{display:flex;width:100%;height:calc(100vh - 50px);overflow:hidden}.projectSet-aside{width:180px;min-width:180px;background:#fbfbfb}.projectSet-item{padding:10px;cursor:pointer}.projectSet-item-icon{padding-right:10px}.projectSet-select{background:#e3e8f0;border-right:3px solid #1890ff}.projectSet-content{width:100%;margin:0 auto}
