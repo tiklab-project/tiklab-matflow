@@ -1,1 +1,0 @@
-.mytodotask{height:100%;overflow:auto;padding:8px;display:flex}.mytodotask_content{max-width:1200px;margin:0 auto}.mytodotask_left{overflow:hidden;max-width:300px;height:100%;min-width:240px}.mytodotask_left_status{margin-bottom:8px}.mytodotask_left #myTodoTask{height:calc(100% - 40px)}.mytodotask_right{flex:1;padding-right:8px;margin-right:8px;overflow:auto}
