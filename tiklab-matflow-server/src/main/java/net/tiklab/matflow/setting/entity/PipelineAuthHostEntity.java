@@ -14,11 +14,15 @@ public class PipelineAuthHostEntity {
     private String hostId;
 
     @Column(name = "name")
-    private String names;
+    private String name;
+
+    @Column(name = "type")
+    private String type;
 
     @Column(name = "create_time")
     private String createTime = PipelineUntil.date;
-    @Column(name = "type")
+
+    @Column(name = "auth_type")
     private int authType;
 
     @Column(name = "ip")
@@ -33,56 +37,42 @@ public class PipelineAuthHostEntity {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "token")
-    private String token;
+    @Column(name = "private_key")
+    private String privateKey;
+
+    @Column(name = "auth_id")
+    private String authId;
 
     //创建人
     @Column(name = "user_id")
     private String userId = LoginContext.getLoginId();
 
-    //是否公开 true：公开， false：不公开
+    //是否公开 1：公开， 2：不公开
     @Column(name = "auth_public")
     private int authPublic;
 
-
-    public String getIp() {
-        return ip;
+    public String getHostId() {
+        return hostId;
     }
 
-    public void setIp(String ip) {
-        this.ip = ip;
+    public void setHostId(String hostId) {
+        this.hostId = hostId;
     }
 
-    public int getPort() {
-        return port;
+    public String getName() {
+        return name;
     }
 
-    public void setPort(int port) {
-        this.port = port;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getPassword() {
-        return password;
+    public String getType() {
+        return type;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    public String getNames() {
-        return names;
-    }
-
-    public void setNames(String names) {
-        this.names = names;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getCreateTime() {
@@ -101,6 +91,21 @@ public class PipelineAuthHostEntity {
         this.authType = authType;
     }
 
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
+    public int getPort() {
+        return port;
+    }
+
+    public void setPort(int port) {
+        this.port = port;
+    }
 
     public String getUsername() {
         return username;
@@ -108,6 +113,30 @@ public class PipelineAuthHostEntity {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPrivateKey() {
+        return privateKey;
+    }
+
+    public void setPrivateKey(String privateKey) {
+        this.privateKey = privateKey;
+    }
+
+    public String getAuthId() {
+        return authId;
+    }
+
+    public void setAuthId(String authId) {
+        this.authId = authId;
     }
 
     public String getUserId() {
@@ -124,13 +153,5 @@ public class PipelineAuthHostEntity {
 
     public void setAuthPublic(int authPublic) {
         this.authPublic = authPublic;
-    }
-
-    public String getHostId() {
-        return hostId;
-    }
-
-    public void setHostId(String hostId) {
-        this.hostId = hostId;
     }
 }
